@@ -1,14 +1,13 @@
-
-import {Post} from "./Post";
+import { Post } from "./Post.jsx";
 
 export function App() {
-
   return (
-    <Post 
-      author="Thiago" 
-      content="lorem ipsum dolor sit amet"
-    />
-  )
+    <div>
+      <Post 
+        author="Thiago" 
+        content="lorem ipsum dolor sit amet" />
+    </div>
+  );
 }
 
 // export default App
