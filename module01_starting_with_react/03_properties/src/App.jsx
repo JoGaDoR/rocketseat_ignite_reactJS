@@ -4,7 +4,10 @@ import {Post} from "./Post";
 export function App() {
 
   return (
-    <Post />
+    <Post 
+      author="Thiago" 
+      content="lorem ipsum dolor sit amet"
+    />
   )
 }
 
