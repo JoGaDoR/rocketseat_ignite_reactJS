@@ -1,5 +1,5 @@
-export function Post() {
-    return <p>Post</p>
+export function Post(props) {
+    return <p>{props.content}</p>
 }
 
 // export default Post
