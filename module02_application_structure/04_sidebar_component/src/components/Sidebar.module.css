@@ -9,3 +9,9 @@
     height: 72px;
     object-fit: cover;
 }
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
