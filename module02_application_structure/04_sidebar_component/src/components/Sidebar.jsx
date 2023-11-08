@@ -12,7 +12,7 @@ export function Sidebar(){
 
             <footer>
                 <a href="#">
-                    Editar seu perfil
+                    Editar seu
                 </a>
             </footer>
         </aside>
