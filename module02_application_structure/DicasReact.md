@@ -26,3 +26,13 @@ arquivo App.jsx
     essa é uma forma!
     a segunda e recomendada é fazer com que a importação seja com escopo
 
+### CSS COMBINATORS ###
+## adjacent sibling selector (+) ##
+seletor adjacente
+
+
+segue a lógica de que a o estilo só vai ser aplicado quando
+tiver outro antes dele
+    .post + .post{
+        margin-top: 2rem;
+    }
