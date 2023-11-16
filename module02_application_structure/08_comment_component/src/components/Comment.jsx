@@ -7,7 +7,7 @@ export function Comment(){
 
             <div className={styleComment.commentBox}>
                 <div className={styleComment.commentContent}>
-
+                    
                 </div>
 
                 <footer>
