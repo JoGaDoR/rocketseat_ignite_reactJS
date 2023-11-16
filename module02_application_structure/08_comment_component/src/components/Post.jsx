@@ -37,7 +37,7 @@ export function Post() {
         <strong>Deixe seu feedback</strong>
 
         <footer>
-          <button type="submit">Comentar</button>
+          <button type="submit">Publicar</button>
         </footer>
       <textarea />
 
