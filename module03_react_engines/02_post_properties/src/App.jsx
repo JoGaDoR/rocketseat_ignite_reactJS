@@ -34,13 +34,13 @@ export function App() {
         role: "Diretor",
       },
       content: [
-        { type: "paragraph", content: "Fala galeraa 👋" },
+        { type: "paragraph", content: "E aí vaqueiros 👋" },
         {
           type: "paragraph",
           content:
-            "Acabei de subir mais um projeto no meu portifa. É um projeto que fizno NLW Return, evento da Rocketseat. O nome do projeto é DoctorCare 🚀",
+            "adipisicing elit. Expedita modi nam nemo. Rerum qui hic, possimus voluptatibus distinctio consequuntur ipsa dolorum voluptatem accusantium at modi dolorem saepe, beatae quo sapiente🚀",
         },
-        { type: "link", content: "jane.design/doctorcare" },
+        { type: "link", content: "mygits.design/doedu" },
       ],
       publishedAt: new Date("2022-05-10 21:00:00"),
     },
