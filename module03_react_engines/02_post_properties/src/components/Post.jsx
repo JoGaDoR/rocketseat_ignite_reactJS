@@ -12,8 +12,8 @@ export function Post(props) {
             src="https://github.com/jogador.png"
           />
           <div className={stylePost.authorInfo}>
-            <strong>Thiago Coelho</strong>
-            <span>CARGO</span>
+            <strong>{props.author.name}</strong>
+            <span>Developer Full Stack Web</span>
           </div>
         </div>
         <time title="11 de maio as 9:13" dateTime="2022-05-11">

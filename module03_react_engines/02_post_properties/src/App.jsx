@@ -30,8 +30,8 @@ export function App() {
       id: 1,
       author: {
         avatarUrl: "https://github.com/will.png",
-        name: "will",
-        role: "Diritor",
+        name: "Will Vaqueiro",
+        role: "Diretor",
       },
       content: [
         { type: "paragraph", content: "Fala galeraa 👋" },
