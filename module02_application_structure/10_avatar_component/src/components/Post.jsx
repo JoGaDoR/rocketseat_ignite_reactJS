@@ -8,7 +8,7 @@ export function Post() {
       <header>
         <div className={stylePost.author}>
           <Avatar
-            src="https://github.com/jogador"
+            src="https://github.com/jogador.png"
           />
           <div className={stylePost.authorInfo}>
             <strong>Thiago Coelho</strong>
