@@ -36,3 +36,9 @@ tiver outro antes dele
     .post + .post{
         margin-top: 2rem;
     }
+
+
+### DECLARAÇÃO IMPERATIVA E DECLARATIVA ###
+## estudar esses assuntos ##
+
+o react usa declaração declarativa
