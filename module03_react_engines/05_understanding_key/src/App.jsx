@@ -27,7 +27,7 @@ export function App() {
       publishedAt: new Date("2022-05-03 20:00:00"),
     },
     {
-      id: 1,
+      id: 2,
       author: {
         avatarUrl: "https://github.com/will.png",
         name: "Will Vaqueiro",
@@ -56,6 +56,7 @@ export function App() {
         {
           posts.map((post) => (
             <Post
+            key={post.id}
               author={post.author}
               content={post.content}
               publishedAt={post.publishedAt}
