@@ -14,7 +14,7 @@ export function Post({ author, publishedAt, content }) {
     ]
   )
 
-  cosnt [newCommenttext, setNewCommentText] = useState('')
+  const [newCommenttext, setNewCommentText] = useState('')
 
   const publishedDateFormatted = format(
     publishedAt,
