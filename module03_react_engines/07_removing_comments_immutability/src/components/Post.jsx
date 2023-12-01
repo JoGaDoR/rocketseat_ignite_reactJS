@@ -31,22 +31,23 @@ export function Post({ author, publishedAt, content }) {
     event.preventDefault()
 
     // const newCommenttext = event.target.comment.value
+    // event.target.comment.value = ''
 
     setComments([...comments, newCommenttext])
+    setNewCommentText('')
 
-    // event.target.comment.value = ''
   }
 
   function handleNewCommentChange(){
     setNewCommentText(event.target.value)
-
-    setNewCommentText('')
   }
 
-  function onDeleteComment(comment){
+  function onDeleteComment(commentToDelete){
     const commentWithoutDeleteOne = comments.filter(comment => {
-      
+      return comment !== commentToDelete
     })
+
+    setComments(commentWithoutDeleteOne)
   }
 
   return (
