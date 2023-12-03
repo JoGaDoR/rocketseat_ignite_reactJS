@@ -7,22 +7,26 @@ import { Comment } from "./Comment";
 import stylePost from "./Post.module.css";
 
 
-interface PostProps{
+export interface PostType{
+  id: number;
   author: {
     name: string;
     role: string;
     avatarUrl: string;
   },
   publishedAt: Date;
-  content: [
+  content: 
     {
       type: 'paragraph' | 'link';
       content: string;
-    }
-  ]
+    }[]
 }
 
-export function Post({ author, publishedAt, content }: PostProps) {
+interface PostProps{
+  post: PostType;
+}
+
+export function Post({ post }: PostProps) {
   const [comments, setComments] = useState(
     [
       "Primeiro post hein?!"
@@ -32,12 +36,12 @@ export function Post({ author, publishedAt, content }: PostProps) {
   const [newCommenttext, setNewCommentText] = useState('')
 
   const publishedDateFormatted = format(
-    publishedAt,
+    post.publishedAt,
     "dd 'de' LLLL 'as' HH:mm'h'",
     { locale: ptBR }
   );
 
-  const publisedDateRelativeToNow = formatDistanceToNow(publishedAt, {
+  const publisedDateRelativeToNow = formatDistanceToNow(post.publishedAt, {
     locale: ptBR,
     addSuffix: true,
   });
@@ -75,20 +79,20 @@ export function Post({ author, publishedAt, content }: PostProps) {
     <article className={stylePost.post}>
       <header>
         <div className={stylePost.author}>
-          <Avatar src={author.avatarUrl} />
+          <Avatar src={post.author.avatarUrl} />
           <div className={stylePost.authorInfo}>
-            <strong>{author.name}</strong>
-            <span>{author.role}</span>
+            <strong>{post.author.name}</strong>
+            <span>{post.author.role}</span>
           </div>
         </div>
-        <time title={publishedDateFormatted} dateTime={publishedAt.toISOString()}>
+        <time title={publishedDateFormatted} dateTime={post.publishedAt.toISOString()}>
           {publisedDateRelativeToNow}
         </time>
       </header>
 
       <div className={stylePost.content}>
         {
-          content.map(item => {
+          post.content.map(item => {
             if (item.type === 'paragraph'){
               return <p key={item.content}>{item.content}</p>
             } else if (item.type === "link"){
