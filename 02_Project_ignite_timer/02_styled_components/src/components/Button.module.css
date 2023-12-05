@@ -1,0 +1,20 @@
+.button{
+    width: 100px;
+    height: 40px;
+}
+
+.primary{
+    background: purple;
+}
+
+.secondary{
+    background: orange;
+}
+
+.sucess{
+    background: rgb(20, 159, 20);
+}
+
+.danger{
+    background: red;
+}
