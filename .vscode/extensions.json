@@ -1,0 +1,23 @@
+{
+    "recommendations": [
+        "styled-components.vscode-styled-components",
+        "daltonmenezes.aura-theme",
+        "formulahendry.auto-close-tag",
+        "steoates.autoimport",
+        "nucllear.vscode-extension-auto-import",
+        "formulahendry.code-runner",
+        "codeium.codeium",
+        "clinyong.vscode-css-modules",
+        "dbaeumer.vscode-eslint",
+        "github.vscode-pull-request-github",
+        "ecmel.vscode-html-css",
+        "sburg.vscode-javascript-booster",
+        "ritwickdey.liveserver",
+        "christian-kohler.path-intellisense",
+        "esbenp.prettier-vscode",
+        "rvest.vs-code-prettier-eslint",
+        "viijay-kr.react-ts-css",
+        "codium.codium",
+        "wallabyjs.quokka-vscode"
+    ]
+}
