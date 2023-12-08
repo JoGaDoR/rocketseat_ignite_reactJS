@@ -1,9 +1,9 @@
-import { Header } from '../components/Header'
+// import { Header } from '../components/Header'
 
 export function History() {
   return (
     <div>
-      <Header></Header>
+      {/* <Header></Header> */}
 
       <h1>HISTORY</h1>
     </div>

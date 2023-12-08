@@ -1,11 +1,11 @@
-import { Header } from '../components/Header'
+// import { Header } from '../components/Header'
 
 export function Home() {
   return (
     <div>
-      <Header></Header>
+      {/* <Header></Header> */}
 
-      <h1></h1>
+      <h1>home</h1>
     </div>
   )
 }
