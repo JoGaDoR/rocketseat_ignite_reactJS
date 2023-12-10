@@ -29,6 +29,34 @@ export const FormContainer = styledHome.div`
     flex-wrap: wrap;
 `
 
+const BaseInput = styledHome.input`
+    background: transparent;
+    height: 2.5rem;
+    border: 0;
+    border-bottom: 2px solid ${(props) => props.theme['gray-500']};
+    font-weight: bold;
+    font-size: 1.125rem;
+    padding: 0 0.5rem;
+    color: ${(props) => props.theme['gray-100']}
+
+    &:focus{
+        box-shadow: none;
+        border-color: ${(props) => props.theme['green-500']};
+    }
+
+    &::placeholder{
+        color: ${(props) => props.theme['gray-500']};
+    }
+`
+
+export const TaskInput = styledHome(BaseInput)`
+    flex: 1;
+`
+
+export const MinutesAmountInput = styledHome(BaseInput)`
+    width: 4rem;
+`
+
 export const CountdownContainer = styledHome.div`
     font-family: 'Roboto Mono', monospace;
     font-size: 10rem;
