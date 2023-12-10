@@ -47,6 +47,11 @@ export const CountdownContainer = styledHome.div`
         border-radius: 8px;
     }
 
+    div:first-child{
+        display: flex;
+        flex-direction: row;
+    }
+
 `
 export const Separator = styledHome.div`
     padding: 2rem 0;
