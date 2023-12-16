@@ -42,3 +42,6 @@ tiver outro antes dele
 ## estudar esses assuntos ##
 
 o react usa declaração declarativa
+
+
+### CONTROLLED VS UNCONTROLLED ###
