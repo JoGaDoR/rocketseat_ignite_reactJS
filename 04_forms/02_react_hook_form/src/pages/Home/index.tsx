@@ -22,11 +22,14 @@ import { useForm } from 'react-hook-form'
  */
 
 export function Home() {
-  const { register, handleSubmit } = useForm()
+  const { register, handleSubmit, watch } = useForm()
 
   function handleCreatNewCycle(data: unknown) {
     console.log(data)
   }
+
+  const task = watch('task')
+  const isSubmitDisabled = !task
 
   return (
     <HomeContainer>
@@ -55,7 +58,7 @@ export function Home() {
             step={5}
             min={5}
             max={60}
-            {...register('minutesAmount')}
+            {...register('minutesAmount', { valueAsNumber: true })}
           />
 
           <span>minutos.</span>
@@ -71,7 +74,7 @@ export function Home() {
           </div>
         </CountdownContainer>
 
-        <StartCountdownButton /* disabled */ type="submit">
+        <StartCountdownButton disabled={isSubmitDisabled} type="submit">
           <Play size={24} />
           Começar
         </StartCountdownButton>
