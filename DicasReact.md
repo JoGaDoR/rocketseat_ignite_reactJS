@@ -45,3 +45,25 @@ o react usa declaração declarativa
 
 
 ### CONTROLLED VS UNCONTROLLED ###
+
+
+### USESTATE ###
+  /**
+   * sempre iniciar um state com a informação de mesmo tipo da qual vai ser manipuldo os dados
+   * no caso abaixo o useState tem que iniciar com [], porque o interface Cycle é um []
+   */
+
+### typescript ###
+
+se em uma variavel voce declarar o tipo, automaticamente o intellisense dara as opções armazenadas naquele dado
+por exemplo:
+
+interface Cycle {
+  id: string
+  task: string
+  minutesAmount: number
+}
+
+const newCycle: Cycle ={
+  aqui voce poderar pedir ao intellisense para ver as opções de dados disponivel  
+}

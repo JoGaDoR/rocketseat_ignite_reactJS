@@ -2,6 +2,7 @@ import { Play } from '@phosphor-icons/react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
+import { useState } from 'react'
 
 import {
   CountdownContainer,
@@ -23,7 +24,19 @@ const newCycleFormValidationSchema = zod.object({
 
 type NewCycleFormData = zod.infer<typeof newCycleFormValidationSchema>
 
+interface Cycle {
+  id: string
+  task: string
+  minutesAmount: number
+}
 export function Home() {
+  /**
+   * sempre iniciar um state com a informação de mesmo tipo da qual será manipuldo os dados.
+   * no caso abaixo o useState tem que iniciar com [], porque o interface Cycle é será uma lista
+   */
+  const [cycles, setCycles] = useState<Cycle[]>([])
+  const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
+
   const { register, handleSubmit, watch, reset } = useForm<NewCycleFormData>({
     resolver: zodResolver(newCycleFormValidationSchema),
     defaultValues: {
@@ -33,9 +46,26 @@ export function Home() {
   })
 
   function handleCreatNewCycle(data: NewCycleFormData) {
-    console.log(data)
+    const id = String(new Date().getTime())
+
+    const newCycle: Cycle = {
+      id,
+      task: data.task,
+      minutesAmount: data.minutesAmount,
+      // isActive: bolean,
+    }
+
+    // é importante  quando se vai armazenar um state e esse state depende da versao anterior
+    // que o valor setado no formato de função
+    // para entender isso ESTUDAR CLOSURES react
+    setCycles((state) => [...state, newCycle])
+    setActiveCycleId(id)
+
     reset()
   }
+
+  const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
+  console.log(activeCycle)
 
   const task = watch('task')
   const isSubmitDisabled = !task
