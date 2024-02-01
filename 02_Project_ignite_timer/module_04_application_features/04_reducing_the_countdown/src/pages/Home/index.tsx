@@ -2,7 +2,8 @@ import { Play } from '@phosphor-icons/react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import * as zod from 'zod'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { differenceInSeconds } from 'date-fns'
 
 import {
   CountdownContainer,
@@ -28,12 +29,9 @@ interface Cycle {
   id: string
   task: string
   minutesAmount: number
+  startDate: Date
 }
 export function Home() {
-  /**
-   * sempre iniciar um state com a informação de mesmo tipo da qual será manipuldo os dados.
-   * no caso abaixo o useState tem que iniciar com [], porque o interface Cycle é será uma lista
-   */
   const [cycles, setCycles] = useState<Cycle[]>([])
   const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
@@ -46,6 +44,20 @@ export function Home() {
     },
   })
 
+  const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
+  console.log(activeCycle)
+
+  useEffect(() => {
+    if (activeCycle) {
+      setInterval(() => {
+        // setAmountSecondsPassed((state) => state + 1)
+        setAmountSecondsPassed(
+          differenceInSeconds(new Date(), activeCycle.startDate),
+        )
+      }, 1000)
+    }
+  }, [activeCycle])
+
   function handleCreatNewCycle(data: NewCycleFormData) {
     const id = String(new Date().getTime())
 
@@ -53,6 +65,7 @@ export function Home() {
       id,
       task: data.task,
       minutesAmount: data.minutesAmount,
+      startDate: new Date(),
       // isActive: bolean,
     }
 
@@ -64,9 +77,6 @@ export function Home() {
 
     reset()
   }
-
-  const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
-  console.log(activeCycle)
 
   const task = watch('task')
   const isSubmitDisabled = !task
