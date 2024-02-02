@@ -48,13 +48,19 @@ export function Home() {
   console.log(activeCycle)
 
   useEffect(() => {
+    let interval: number
+
     if (activeCycle) {
-      setInterval(() => {
+      interval = setInterval(() => {
         // setAmountSecondsPassed((state) => state + 1)
         setAmountSecondsPassed(
           differenceInSeconds(new Date(), activeCycle.startDate),
         )
       }, 1000)
+    }
+
+    return () => {
+      clearInterval(interval)
     }
   }, [activeCycle])
 
@@ -68,12 +74,9 @@ export function Home() {
       startDate: new Date(),
       // isActive: bolean,
     }
-
-    // é importante  quando se vai armazenar um state e esse state depende da versao anterior
-    // que o valor setado no formato de função
-    // para entender isso ESTUDAR CLOSURES react
     setCycles((state) => [...state, newCycle])
     setActiveCycleId(id)
+    setAmountSecondsPassed(0)
 
     reset()
   }
