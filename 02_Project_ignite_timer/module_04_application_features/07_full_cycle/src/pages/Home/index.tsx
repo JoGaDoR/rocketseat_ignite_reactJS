@@ -63,8 +63,8 @@ export function Home() {
         )
 
         if (secondsDifference >= totalSeconds) {
-          setCycles(
-            cycles.map((cycle) => {
+          setCycles((state) =>
+            state.map((cycle) => {
               if (cycle.id === activeCycleId) {
                 return { ...cycle, finishedDate: new Date() }
               } else {
@@ -101,8 +101,8 @@ export function Home() {
   }
 
   function handleInterruptCycle() {
-    setCycles(
-      cycles.map((cycle) => {
+    setCycles((state) =>
+      state.map((cycle) => {
         if (cycle.id === activeCycleId) {
           return { ...cycle, interruptedDate: new Date() }
         } else {
