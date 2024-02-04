@@ -18,41 +18,6 @@ export const HomeContainer = styled.main`
   }
 `
 
-
-
-export const CountdownContainer = styled.div`
-  font-family: 'Roboto Mono', monospace;
-  font-size: 10rem;
-  line-height: 8rem;
-  color: ${(props: DefaultTheme) => props.theme['gray-100']};
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  gap: 1rem;
-
-  span {
-    background: ${(props: DefaultTheme) => props.theme['gray-700']};
-    padding: 2rem 1rem;
-    border-radius: 8px;
-  }
-
-  div:first-child {
-    display: flex;
-    flex-direction: row;
-  }
-`
-export const Separator = styled.div`
-  padding: 2rem 0;
-  color: ${(props: DefaultTheme) => props.theme['green-500']};
-
-  width: 4rem;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-`
-
 export const BaseCountdownButton = styled.button`
   width: 100%;
   border: 0;
