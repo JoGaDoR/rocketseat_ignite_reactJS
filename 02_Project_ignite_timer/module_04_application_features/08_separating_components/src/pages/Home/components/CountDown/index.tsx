@@ -1,4 +1,4 @@
-import { CountdownContainer, Separator } from '../styles.ts'
+import { CountdownContainer, Separator } from '../../styles.ts'
 
 export function CountDown() {
   return (
