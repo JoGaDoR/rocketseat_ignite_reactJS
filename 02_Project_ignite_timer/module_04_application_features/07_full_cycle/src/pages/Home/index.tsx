@@ -72,9 +72,11 @@ export function Home() {
               }
             }),
           )
+          setAmountSecondsPassed(totalSeconds)
+          clearInterval(interval)
+        } else {
+          setAmountSecondsPassed(secondsDifference)
         }
-
-        setAmountSecondsPassed(secondsDifference)
       }, 1000)
     }
 
