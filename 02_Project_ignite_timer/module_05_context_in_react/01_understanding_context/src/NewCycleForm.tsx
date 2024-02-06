@@ -1,6 +1,10 @@
+// import { useContext } from "react"
+// import { CyclesContext } from "./Home"
 
-export function NewCycleForm(){
-    return (
-        <h1>NewCycleForm</h1>
-    )
-}
+// export function NewCycleForm(){
+//     const { activeCycle } = useContext(CyclesContext)
+
+//     return (
+//         <h1>NewCycleForm: {activeCycle}</h1>
+//     )
+// }
