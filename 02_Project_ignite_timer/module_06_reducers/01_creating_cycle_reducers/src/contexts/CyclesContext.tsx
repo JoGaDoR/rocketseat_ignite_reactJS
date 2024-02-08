@@ -39,9 +39,6 @@ export function CyclesContextProvider({
     // console.log(state)
     // console.log(action)
 
-    // if (action.type === 'ADD_NEW_CYCLE') {
-    //   return [...state, action.payload.newCycle]
-    // }
     if (action.type === 'ADD_NEW_CYCLE') {
       return [...state, action.payload.newCycle]
     }
