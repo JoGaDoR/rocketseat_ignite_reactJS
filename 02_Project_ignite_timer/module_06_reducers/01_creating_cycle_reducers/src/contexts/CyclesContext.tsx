@@ -31,11 +31,22 @@ interface CyclesContextProviderProps {
   children: ReactNode
 }
 
+type Action =
+  | { type: 'ADD_NEW_CYCLE'; payload: { newCycle: Cycle } }
+  | {
+      type: 'INTERRUPT_CURRENT_CYCLE'
+      payload: { activeCycleId: string | null }
+    }
+  | {
+      type: 'MARK_CURRENT_CYCLE_AS_FINISHED'
+      payload: { activeCycleId: string | null }
+    }
+
 export function CyclesContextProvider({
   children,
 }: CyclesContextProviderProps) {
   // const [cycles, setCycles] = useState<Cycle[]>([])
-  const [cycles, dispatch] = useReducer((state: Cycle[], action: any) => {
+  const [cycles, dispatch] = useReducer((state: Cycle[], action: Action) => {
     // console.log(state)
     // console.log(action)
 
@@ -44,7 +55,7 @@ export function CyclesContextProvider({
     }
 
     return state
-  }, [])
+  }, [] as Cycle[])
 
   const [activeCycleId, setActiveCycleId] = useState<string | null>(null)
   const [amountSecondsPassed, setAmountSecondsPassed] = useState(0)
@@ -73,7 +84,7 @@ export function CyclesContextProvider({
     //       }
     //     }),
     //   )
-    //   setActiveCycleId(null)
+      setActiveCycleId(null)
   }
 
   function createNewCycle(data: CreateCycleDate) {
@@ -87,7 +98,7 @@ export function CyclesContextProvider({
       // isActive: bolean,
     }
     dispatch({
-      type: 'CREATE_NEW_CYCLE',
+      type: 'ADD_NEW_CYCLE',
       payload: {
         newCycle,
       },
@@ -114,7 +125,7 @@ export function CyclesContextProvider({
     //       }
     //     }),
     //   )
-    //   setActiveCycleId(null)
+      setActiveCycleId(null)
   }
 
   return (
